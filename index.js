@@ -9,43 +9,12 @@ const app = express()
 app.use(morgan('tiny'))
 
 // se è in locale in MAMPP
-/*
 const connection = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'root',
     database:'node_crud'
 })
-*/
-
-/*
-database: node_crud
-username: xr4kw78cr0vf37tegm5n
-host: us-east.connect.psdb.cloud
-password: pscale_pw_24Gzrt4wr9oDC6steMj78UjAhmdlmwFyKJummrqAd4o
-*/
-
-const connection = mysql.createConnection({
-    host:'us-east.connect.psdb.cloud',
-    user:'xr4kw78cr0vf37tegm5n',
-    password:'pscale_pw_24Gzrt4wr9oDC6steMj78UjAhmdlmwFyKJummrqAd4o',
-    database:'node_crud',
-    ssl: {
-        "rejectUnauthorized": "true",
-        "secureProtocol": "TLSv1_2_method"
-    }
-})
-
-
-// E' su remotemysql
-/*
-const connection = mysql.createConnection({
-	host: 'remotemysql.com',
-	user: 'qjIhc3fJ9V',
-	password: 'eGf8qIfs4A',
-	database: 'qjIhc3fJ9V'
-});
-*/
 
 connection.connect((error) => {
     if(error) { console.log(error); process.exit(-1); }
